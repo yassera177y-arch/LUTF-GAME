@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUTF GAME - منصة الأسئلة والأجوبة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>LUTF GAME 💬</h1>
+            <p>منصة الأسئلة والأجوبة المجتمعية</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="question-form-section">
+            <h3>اطرح سؤالاً جديداً</h3>
+            <div class="form-group">
+                <input type="text" id="questionInput" placeholder="اكتب سؤالك هنا بوضوح...">
+                <button id="addQuestionBtn">نشر السؤال</button>
+            </div>
+        </section>
+
+        <section class="questions-display-section">
+            <h3>الأسئلة الحالية</h3>
+            <div id="questionsContainer">
+                <p class="loading-text">جاري تحميل الأسئلة...</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
