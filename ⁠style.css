@@ -1,0 +1,185 @@
+/* إعدادات الخطوط والألوان العامة للموقع */
+:root {
+    --primary-color: #4a90e2;    /* اللون الأزرق المريح */
+    --background-color: #f5f7fa; /* لون خلفية الموقع */
+    --card-color: #ffffff;       /* لون صناديق الأسئلة */
+    --text-color: #333333;       /* لون النص الأساسي */
+    --accent-color: #2ecc71;     /* لون زر النشر الأخضر */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* تنسيق الهيدر (الشريط العلوي) */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* تنسيق قسم إضافة سؤال جديد */
+.question-form-section {
+    background-color: var(--card-color);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.question-form-section h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+}
+
+#questionInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#questionInput:focus {
+    border-color: var(--primary-color);
+}
+
+#addQuestionBtn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#addQuestionBtn:hover {
+    background-color: #27ae60;
+}
+
+/* تنسيق قسم عرض الأسئلة */
+.questions-display-section h3 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.loading-text {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* تنسيق بطاقة السؤال الفردي (سيتم استخدامها برمجياً لاحقاً) */
+.question-card {
+    background-color: var(--card-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    margin-bottom: 15px;
+    border-right: 5px solid var(--primary-color);
+}
+
+.question-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* صندوق الإجابات داخل السؤال */
+.answers-box {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.answer-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.95rem;
+}
+
+.answer-item:last-child {
+    border-bottom: none;
+}
+
+.no-answers {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* نموذج إضافة إجابة */
+.answer-form {
+    display: flex;
+    gap: 8px;
+}
+
+.answer-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.reply-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* لتوافق المظهر مع الشاشات الصغيرة (الجوالات) */
+@media (max-width: 600px) {
+    .form-group, .answer-form {
+        flex-direction: column;
+    }
+    #addQuestionBtn, .reply-btn {
+        width: 100%;
+    }
+}
