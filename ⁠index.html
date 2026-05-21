@@ -4,14 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUTF GAME - منصة الأسئلة والأجوبة</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --bg-color: #f0f4f8;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--secondary-color);
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--primary-color);
+        }
+
+        .question-card {
+            background: #f8fafc;
+            border-right: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .question-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .answers-box {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .answer-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 15px;
+        }
+
+        .answer-item:last-child {
+            border-bottom: none;
+        }
+
+        .no-answers, .loading-text {
+            color: #64748b;
+            font-style: italic;
+            margin: 0;
+        }
+
+        .answer-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .answer-input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .reply-btn {
+            padding: 8px 15px;
+            font-size: 14px;
+            background-color: #10b981;
+        }
+
+        .reply-btn:hover {
+            background-color: #059669;
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <div class="container">
             <h1>LUTF GAME 💬</h1>
-            <p>منصة الأسئلة والأجوبة المجتمعية</p>
+            <p>منصة الأسئلة والأجوبة لـ فريق لطف التطوعي</p>
         </div>
     </header>
 
@@ -27,7 +181,7 @@
         <section class="questions-display-section">
             <h3>الأسئلة الحالية</h3>
             <div id="questionsContainer">
-                <p class="loading-text">جاري تحميل الأسئلة...</p>
+                <p class="loading-text">جاري تحميل الأسئلة من قاعدة البيانات...</p>
             </div>
         </section>
     </main>
